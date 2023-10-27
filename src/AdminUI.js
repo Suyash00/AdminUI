@@ -14,6 +14,7 @@ function AdminUI() {
   const [user, setUser] = useState([]);
   const [selectedRows, setSelectedRows] = useState([]);
   const [editingRows, setEditingRows] = useState({});
+  const [selectAllChecked, setSelectAllChecked] = useState(false);
 
   const [debounceTimeout, setDebounceTimeout] = useState(null);
 
@@ -91,6 +92,25 @@ function AdminUI() {
     }
   };
 
+  const handleAllSelect = () => {
+    // Toggle the "Select All" checkbox status
+    setSelectAllChecked(!selectAllChecked);
+
+    // Update the selectedRows based on the "Select All" checkbox status
+    if (!selectAllChecked) {
+      // If it's not checked, select all rows on the current page
+      const firstPageIndex = (currentPage - 1) * itemsPerPage;
+      const lastPageIndex = firstPageIndex + itemsPerPage;
+      const selectedPageRows = data
+        .slice(firstPageIndex, lastPageIndex)
+        .map((item) => item.id);
+      setSelectedRows(selectedPageRows);
+    } else {
+      // If it's checked, deselect all rows
+      setSelectedRows([]);
+    }
+  };
+
   const handleDeleteSelected = () => {
     const updatedData = data.filter((item) => !selectedRows.includes(item.id));
     setData(updatedData);
@@ -148,7 +168,14 @@ function AdminUI() {
             <table>
               <thead>
                 <tr>
-                  <th>Select</th>
+                  <th>
+                    <input
+                      type="checkbox"
+                      checked={selectAllChecked}
+                      onChange={handleAllSelect}
+                    />
+                    Select
+                  </th>
                   <th>NAME</th>
                   <th>EMAIL</th>
                   <th>ROLE</th>
