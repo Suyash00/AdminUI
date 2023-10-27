@@ -174,7 +174,7 @@ function AdminUI() {
                       checked={selectAllChecked}
                       onChange={handleAllSelect}
                     />
-                    Select
+                    {/* Select */}
                   </th>
                   <th>NAME</th>
                   <th>EMAIL</th>
