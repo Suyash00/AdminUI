@@ -1,0 +1,94 @@
+.selected {
+  background-color: #ccc;
+}
+
+td {
+  padding: 0 20px;
+}
+
+.search-bar {
+  width: 500px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: aliceblue;
+  margin-top: auto;
+}
+
+.search-container {
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 10px;
+}
+
+table {
+  width: 100%;
+}
+
+th {
+  background-color: gray;
+  color: white;
+}
+
+tr {
+  background-color: aliceblue;
+  padding: 10px 25px;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  margin-right: auto;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button-delete-selected {
+  background-color: #ff0005;
+  color: #fff;
+  margin-right: auto;
+  margin-left: 10px;
+}
+
+button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px;
+  margin: 3px;
+  cursor: pointer;
+}
+
+.button-delete {
+  background-color: #ff0005;
+  color: #fff;
+}
+
+.button-save {
+  background-color: #4fb514;
+  color: #fff;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-input {
+  border: 1px solid #ccc;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 14px;
+}
